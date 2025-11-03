@@ -1,0 +1,94 @@
+import { useState } from 'react';
+
+const testimonials = [
+  {
+    name: "Ramesh Gupta",
+    role: "Home Buyer, Delhi",
+    text: "Maxpine ne mere sapno ka ghar sach kar diya! Saara process smooth tha aur team ne har step pe support diya.",
+    rating: 5
+  },
+  {
+    name: "Sneha Verma",
+    role: "Apartment Owner, Mumbai",
+    text: "Property selection aur documentation ka process bahut simple aur transparent tha. Maxpine ke saath invest karna safe aur reliable experience tha.",
+    rating: 5
+  },
+  {
+    name: "Amit Singh",
+    role: "Residential Buyer, Bengaluru",
+    text: "Maxpine ke staff ne har query patiently solve ki aur har step me guide kiya. Ghar ka location aur amenities bilkul expectation ke hisaab se hain.",
+    rating: 5
+  },
+  {
+    name: "Priya Sharma",
+    role: "Home Owner, Pune",
+    text: "Team ka customer support excellent hai. Humare budget aur preferences ke according property choose karna easy tha.",
+    rating: 4
+  }
+];
+
+export default function Testimonial() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  return (
+    <section className="py-5 bg-gradient-to-r from-gray-900 to-gray-700 text-white relative">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col justify-center ">
+        {/* Header */}
+        <p className="text-[#20ae9b] font-semibold uppercase tracking-widest text-sm mb-2">
+          Maxpine Customer Reviews
+        </p>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold mb-3 text-white drop-shadow-xl">
+          What Our Clients Say
+        </h2>
+
+        {/* Testimonial Card */}
+        <div className="relative  bg-gray-800 flex flex-col justify-center items-center pb-3 rounded-3xl   shadow-2xl border-2 border-[#20ae9b] ">
+          {/* Quote Icon */}
+          <div className="text-[#20ae9b] text-4xl md:text-5xl lg:text-6xl ">❝</div>
+
+          {/* Testimonial Text */}
+          <p className=" md:w-full md:px-5  text-sm  lg:text-lg mb-1 ">
+            {testimonials[currentTestimonial].text}
+          </p>
+
+          {/* Rating Stars */}
+          <div className="flex justify-center mb-1">
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className={`text-yellow-400 text-xl sm:text-2xl ${
+                  i < testimonials[currentTestimonial].rating ? "opacity-100" : "opacity-40"
+                }`}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+
+          {/* Client Name & Role */}
+          <h4 className="font-bold text-lg sm:text-xl text-indigo-50">
+            {testimonials[currentTestimonial].name}
+          </h4>
+          <p className="text-[#20ae9b] text-sm sm:text-base mb-4">
+            {testimonials[currentTestimonial].role}
+          </p>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonial(index)}
+                className={`cursor-pointer w-3 h-3 rounded-full transition-all ${
+                  currentTestimonial === index
+                    ? "bg-[#20ae9b] w-6 sm:w-8 h-3 sm:h-4 shadow-lg"
+                    : "bg-white bg-opacity-30"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

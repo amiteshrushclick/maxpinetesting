@@ -1,0 +1,324 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../../components/AppContext';
+
+import { Train, MapPin, Calendar, FileText, ArrowRight, Zap, Clock, Leaf, Users, TrendingUp, CheckCircle2, X } from 'lucide-react';
+import { Link } from 'react-router-dom'
+import img1 from '../../assets/personal-rapid-transport/1__1_.webp'
+import img2 from '../../assets/personal-rapid-transport/1 (1).png'
+import img3 from '../../assets/personal-rapid-transport/1__2_.webp'
+import img4 from '../../assets/personal-rapid-transport/1__3_.webp'
+
+
+export default function PersonalRapidTransit() {
+  const { setWebName } = useContext(AppContext);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const recentPosts = [
+    "Buy Plots Near Jewar Airport – Anugrah Homes by Maxpine Group",
+    "A Joyous Celebration at Anugrah Homes: Family Carnival Success!",
+    "Lights, Camera, Action: Progress at International Film City (YEIDIA)",
+    "Residential Plots Near Noida International Airport: A New Gateway to Global Connectivity",
+    "A Festive Affair: Diwali at Maxpine Group"
+  ];
+
+  const openImageModal = (imageSrc, altText) => {
+    setSelectedImage({ src: imageSrc, alt: altText });
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+  };
+
+  useEffect(() => {
+    return () => {
+      setWebName(null);
+    };
+  }, [setWebName]);
+
+
+
+  const features = [
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Fast & Efficient",
+      description: "Quick point-to-point transportation"
+    },
+    {
+      icon: <Leaf className="w-6 h-6" />,
+      title: "Eco-Friendly",
+      description: "Zero emissions electric transport"
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "24/7 Service",
+      description: "Round-the-clock availability"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Personal Comfort",
+      description: "Private pods for individual travel"
+    }
+  ];
+
+
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Breadcrumb */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center text-sm text-gray-600">
+            <span className="hover:text-[#20ae9b] cursor-pointer">Home</span>
+            <span className="mx-2">/</span>
+            <a href="#" className="hover:text-[#1f7777] transition">Updates</a>
+            <span className="mx-2">/</span>
+            <span className="text-gray-900 font-medium">Personal Rapid Transit – Pod Taxi</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-[#20ae9b] via-[#129886] to-[#067768] text-white py-16 sm:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black opacity-30"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white text-[gray] bg-opacity-20 backdrop-blur-sm rounded-full p-4">
+                <Train className="w-12 h-12" />
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+              Personal Rapid Transit – Pod Taxi
+            </h1>
+            <p className="text-xl sm:text-2xl text-pink-50 max-w-3xl mx-auto">
+              Revolutionary Transport System Connecting Film City to Jewar International Airport
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2">
+            {/* PRT System Overview */}
+            <div className="bg-white rounded-2xl p-4 lg:p-6 shadow-lg border border-gray-100 mb-8">
+              <div className="flex items-center gap-3 mb-6">
+                <Train className="w-7 h-7 min-w-5 min-h-5 text-[#20ae9b]" />
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  Personal Rapid Transit (PRT) System
+                </h2>
+              </div>
+
+              {/* Image Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer">
+                  <img
+                    src={img1}
+                    alt="PRT System Overview"
+                    className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                    onClick={() => openImageModal(img1, "PRT System Overview")}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openImageModal(img1, "PRT System Overview")}
+                      className="cursor-pointer opacity-0 group-hover:opacity-100 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 hover:bg-white/30 transition-all duration-300 transform scale-75 group-hover:scale-100"
+                    >
+                      <span className="text-white font-medium">View Full</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer">
+                  <img
+                    src={img3}
+                    alt="Pod Station"
+                    className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                    onClick={() => openImageModal(img3, "Pod Station")}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openImageModal(img3, "Pod Station")}
+                      className="cursor-pointer opacity-0 group-hover:opacity-100 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 hover:bg-white/30 transition-all duration-300 transform scale-75 group-hover:scale-100"
+                    >
+                      <span className="text-white font-medium">View Full</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Station Cross Section */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 mb-6">
+                <div className="relative group overflow-hidden rounded-lg cursor-pointer">
+                  <img
+                    src={img4}
+                    alt="Station Cross Section"
+                    className="w-full h-auto rounded-lg hover:scale-105 transition-transform duration-300"
+                    onClick={() => openImageModal(img4, "Station Cross Section")}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openImageModal(img4, "Station Cross Section")}
+                      className="cursor-pointer opacity-0 group-hover:opacity-100 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 hover:bg-white/30 transition-all duration-300 transform scale-75 group-hover:scale-100"
+                    >
+                      <span className="text-white font-medium">View Full</span>
+                    </button>
+                  </div>
+                </div>
+                <p className="text-center text-sm text-gray-600 mt-3 font-medium">Station Cross Section</p>
+              </div>
+
+
+            </div>
+
+            {/* Key Features */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 lg:p-6 border border-purple-100 hover:shadow-lg transition-all hover:-translate-y-1"
+                >
+                  <div className="bg-gradient-to-r from-[#20ae9b] to-[#0c8979] text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Route Information */}
+            <div className="bg-white rounded-2xl p-4 lg:p-6 shadow-lg border border-gray-100 mb-8">
+              <div className="flex items-center gap-3 mb-6">
+                <MapPin className="w-7 h-7 min-w-5 min-h-5 text-[#20ae9b]" />
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  PRT Alignment - Film City To Jewar International Airport
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <FileText className="w-5 h-5 text-[#20ae9b] flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Project Scope</h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                       <span className='font-semibold'>1. </span> RFP floated for DEVELOPMENT OF PASSENGER PERSONAL RAPID TRANSIT (PRT) SYSTEM FROM FILM CITY TO NOIDA INTERNATIONAL AIRPORT, JEWAR (YEIDA), UTTAR PRADESH ON DESIGN, BUILD, FINANCE, OPERATE, AND TRANSFER (DBFOT) BASIS on 1 July 2023
+                      <br/> <span className='font-semibold'>2. </span> Corrigendum Uploaded on 23 August 2023
+                        <br/><span className='font-semibold'>3. </span> Last date for submission of bid 25 October 2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative group rounded-xl overflow-hidden shadow-md cursor-pointer">
+                  <img
+                    src={img2}
+                    alt="Route Map"
+                    className="w-full h-auto hover:scale-105 transition-transform duration-300"
+                    onClick={() => openImageModal(img2, "Route Map")}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => openImageModal(img2, "Route Map")}
+                      className="cursor-pointer opacity-0 group-hover:opacity-100 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 hover:bg-white/30 transition-all duration-300 transform scale-75 group-hover:scale-100"
+                    >
+                      <span className="text-white font-medium">View Full</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-2xl p-4 lg:p-6 shadow-lg border border-gray-100 sticky  mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-200">
+                Recent Updates
+              </h3>
+              <div className="space-y-4">
+                {recentPosts.map((post, index) => (
+                  <a
+                    key={index}
+                    href="/updates/personal-rapid-transit/media"
+                    className="block group"
+                  >
+                    <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-purple-50 transition-colors">
+                      <ArrowRight className="w-5 h-5 text-[#20ae9b] flex-shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                      <span className="text-gray-700 text-sm leading-relaxed group-hover:text-[#20ae9b] transition-colors">
+                        {post}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Info Card */}
+            <div className="bg-gradient-to-br from-[#20ae9b] to-[#149887] rounded-2xl p-4 lg:p-6 text-[#ebebeb] shadow-xl">
+              <h3 className="text-xl font-bold mb-4">Project Highlights</h3>
+              <div className="space-y-4">
+                <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                  <p className="text-sm font-semibold text-gray-500 mb-1">Location</p>
+                  <p className="text-[#404040]">Film City to Jewar Airport, YEIDA</p>
+                </div>
+                <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                  <p className="text-sm font-semibold text-gray-500 mb-1">Model</p>
+                  <p className="text-[#404040]">DBFOT (Design, Build, Finance, Operate, Transfer)</p>
+                </div>
+                <div className="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4">
+                  <p className="text-sm font-semibold text-gray-500 mb-1">Status</p>
+                  <p className="text-[#404040]">RFP Stage - Bidding Open</p>
+                </div>
+              </div>
+            </div>
+            {/* Quick Contact Card */}
+            <div className="mt-8 bg-gradient-to-br from-[#20ae9b] to-[#108878] rounded-lg p-4 text-white">
+              <h3 className="text-xl font-bold mb-4">Need More Information?</h3>
+              <p className="text-sm mb-4 text-blue-50">
+                Get in touch with our team to learn more about investment opportunities at the rapid transit system.
+              </p>
+              <Link to="/updates/logistics-park/contact">
+                <button className="cursor-pointer w-full bg-white text-[#20ae9b] font-semibold py-3 rounded-lg hover:bg-blue-50 transition">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-7xl max-h-full">
+            <button
+              onClick={closeImageModal}
+              className="cursor-pointer absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

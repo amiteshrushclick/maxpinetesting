@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Priority 1.0 -->
+  <url>
+    <loc>https://www.maxpinegroup.in/</loc>
+    <priority>1.0</priority>
+  </url>
+
+
+ <!-- Priority 0.9 (Blogs / Articles) -->
+  <url><loc>https://www.maxpinegroup.in/buy-plots-near-jewar-airport</loc><priority>0.9</priority></url>
+  <url><loc>https://www.maxpinegroup.in/property/plots-near-noida-international-airport</loc><priority>0.9</priority></url>
+  <url><loc>https://www.maxpinegroup.in/nia</loc><priority>0.9</priority></url>
+
+
+
+
+
+  <!-- Priority 0.8 -->
+  <url><loc>https://www.maxpinegroup.in/about-us</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/contact-us</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/book-site-visit</loc><priority>0.8</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/anugrahhomes</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/skyline-aero-homes</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/brij-vrinda</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/the-club-farm</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/leafshade</loc><priority>0.8</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/blogs</loc><priority>0.8</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/updates/noida-international-airport</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/updates/international-film-city</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/updates/medical-device-park</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/updates/logistics-park</loc><priority>0.8</priority></url>
+  <url><loc>https://www.maxpinegroup.in/updates/personal-rapid-transit</loc><priority>0.8</priority></url>
+
+  <!-- Priority 0.7 -->
+  <url><loc>https://www.maxpinegroup.in/projects/anugrahhomes/keyplan</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/anugrahhomes/layout</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/anugrahhomes/pricelist</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/developments/anugrahhomes</loc><priority>0.7</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/projects/skyline/keyplan</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/skyline/layout</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/skyline/pricelist</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/developments/skyline</loc><priority>0.7</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/projects/brij-vrinda/keyplan</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/brij-vrinda/layout</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/brij-vrinda/pricelist</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/developments/brij-vrinda</loc><priority>0.7</priority></url>
+
+  <url><loc>https://www.maxpinegroup.in/projects/the-club-farm/keyplan</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/the-club-farm/layout</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/projects/the-club-farm/pricelist</loc><priority>0.7</priority></url>
+  <url><loc>https://www.maxpinegroup.in/developments/the-club-farm</loc><priority>0.7</priority></url>
+
+ 
+</urlset>

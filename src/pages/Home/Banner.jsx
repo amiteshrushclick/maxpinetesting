@@ -1,0 +1,219 @@
+import { Play, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import {Link} from 'react-router-dom'
+import "swiper/css";
+import "swiper/css/navigation";
+import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+
+// Lazy load heavy components
+import OptimizedVideo from '../../components/OptimizedVideo';
+
+// Import only essential images
+import anulogo from '../../assets/All_home_imgs/logo-2.webp'
+import brijlogo from '../../assets/BrijVrinda/Brij-Vrindra-removebg-preview.webp'
+import skylogo from '../../assets/skyline/2.webp'
+import anu from '../../assets/All_home_imgs/Gate-1170x785.webp'
+import brij from '../../assets/BrijVrinda/1.webp'
+import sky from '../../assets/skyline/skylogo.webp'
+import club from '../../assets/ClubForm/Club-logo.webp'
+import banner_CF from '../../assets/ClubForm/banner-CF.webp'
+
+// Use external CDN URLs for all videos for better reliability and performance
+const anugrahVideo = "https://ik.imagekit.io/vffwkpfwh/anugrah.mp4?updatedAt=1761463387948";
+const skylineVideo = "https://ik.imagekit.io/vffwkpfwh/skyline.mp4?updatedAt=1761463294404";
+const clubVideo = "https://ik.imagekit.io/vffwkpfwh/club-vid-2.mp4?updatedAt=1761463234590";
+
+// Use external video URLs for better performance
+const brij_videos = "https://ik.imagekit.io/16pq4do9s/assets/BrijVrinda/Brij%20Vrinda_18Aug25%20(1)%20(1)%20(1)%20(1).mp4?updatedAt=1759845746168"
+const slides = [
+
+  {
+    id: 1,
+    img: anu,
+    title: "Anugrah Homes",
+    subtitle: "Anugrah Homes",
+    price: "₹52,500",
+    description: "Elite addresses with strong investment potential and top-tier facilities.",
+    acer:"Per Sq. Yards",
+    logo:anulogo,
+    wedt:true,
+    video: anugrahVideo,
+  },
+  {
+    id: 2,
+    img: sky,
+    title: "Skyline Aero Homes",
+    subtitle: "Skyline Aero Homes",
+    price: "₹32,500",
+    description: "High-value locations featuring premium comforts and long-term appreciation.",
+     acer:"Per Sq. Yards",
+     logo:skylogo,
+
+    video: skylineVideo,
+  },
+  {
+    id: 3,
+    img: brij,
+    title: "Brij Vrinda",
+    subtitle: "Brij Vrinda",
+    price: "₹15,000",
+    description: "Strategically positioned properties with unmatched amenities and growth promise.",
+     acer:"Per Sq. Yards",
+     logo:brijlogo,
+    video: brij_videos,
+  },
+  {
+    id: 4,
+    img: banner_CF,
+    title: "The Club Farm",
+    subtitle: "The Club Farm",
+    price: "₹4500",
+    description: "Strategic locations with high appreciation potential and premium amenities",
+     acer:"Per Sq. Yards",
+     logo:club,
+    video: clubVideo,
+  },
+];
+
+export default function Banner() {
+  const [videoModal, setVideoModal] = useState({ isOpen: false, url: "" });
+  const modalRef = useRef(null);
+
+  // Close modal when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setVideoModal({ isOpen: false, url: "" });
+      }
+    };
+
+    if (videoModal.isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [videoModal.isOpen]);
+
+  return (
+    <section className="relative w-full h-screen bg-black">
+      {/* Swiper */}
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop
+        className="h-full"
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div
+              className="w-full h-screen bg-cover bg-center flex items-center relative"
+              style={{ backgroundImage: `url(${slide.img})` }}
+            >
+              <div className="absolute inset-0 bg-black/60"></div>
+
+              <div className="relative z-10 container mx-auto px-6 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="border-4 border-[#20ae9b] p-8 md:p-10 max-w-2xl bg-black/20 backdrop-blur-sm"
+                >
+                  <span className="text-[#20ae9b]  font-semibold text-lg tracking-wide mb-2 flex justify-between items-center">
+                    {slide.subtitle}
+                    <span className={ `bg-white/98 rounded p-4 ${
+    slide.wedt ? "py-4 pb-6 md:py-8 md:pb-10 " : "py-4"
+  }`}> 
+
+                  <img  src={slide.logo} className="w-10 md:w-30" alt="Images" />
+                    </span>
+                  </span>
+                  <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                    {slide.title}
+                  </h2>
+                  <p className="text-gray-200 text-lg mb-6">{slide.description}</p>
+
+                  <div className="flex items-center gap-4">
+                    <Link to="/book-site-visit">
+                      <button className="cursor-pointer bg-[#20ae9b] text-white font-semibold px-4 md:px-8 py-3 rounded-lg shadow-lg hover:bg-[#21635a]  transition-all duration-300 hover:shadow-xl">
+                      Schedule a Visit
+                    </button>
+                    </Link>
+                    <button
+                      onClick={() =>
+                        setVideoModal({ isOpen: true, url: slide.video })
+                      }
+                      className="cursor-pointer bg-white/20 backdrop-blur-sm border-2 border-white rounded-full p-4 hover:bg-white/30 transition-all duration-300 group"
+                    >
+                      <Play className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
+                    </button>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="text-left md:text-right"
+                >
+                  <div className="inline-block bg-black/40 backdrop-blur-sm border-2 border-[#20ae9b] p-8 rounded-lg">
+                    <p className="text-xl text-gray-300 font-medium mb-2">
+                      Starting Price
+                    </p>
+                    <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#20ae9b] mb-3">
+                      {slide.price} <span className="text-lg text-[gray]">{slide.acer}</span>
+                    </p>
+                    <p className="text-gray-400 text-sm">
+                      *Prices may vary based on Sq Yd
+                    </p>
+                    
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+
+        <div className="swiper-button-prev !w-12 !h-12 !left-6 !top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg cursor-pointer hover:bg-white transition-all duration-300 after:!content-none flex items-center justify-center">
+          <ChevronLeft className="w-6 h-6 text-[#3b3835]" />
+        </div>
+        <div className="swiper-button-next !w-12 !h-12 !right-6 !top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg cursor-pointer hover:bg-white transition-all duration-300 after:!content-none flex items-center justify-center">
+          <ChevronRight className="w-6 h-6 text-[#3b3835]" />
+        </div>
+      </Swiper>
+
+      {/* Video Modal */}
+      {videoModal.isOpen && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
+          <div
+            ref={modalRef}
+            className="relative w-full max-w-3xl rounded-lg overflow-hidden"
+          >
+            <button
+              onClick={() => setVideoModal({ isOpen: false, url: "" })}
+              className="cursor-pointer absolute top-2 right-2 text-white z-50"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <OptimizedVideo
+              src={videoModal.url}
+              controls
+              autoPlay
+              className="w-full h-auto max-h-[70vh] rounded-lg object-bottom"
+            />
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
