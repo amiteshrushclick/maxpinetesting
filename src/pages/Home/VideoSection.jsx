@@ -2,7 +2,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize2, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 // Use dynamic video URL to avoid build issues
-const videoUrl = "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_30MB.mp4";
+const videoUrl = "https://ik.imagekit.io/jbz37bp1f/virtual-property-tour.mp4?updatedAt=1762176025682";
 
 export default function VideoSection() {
   const videoRef = useRef(null);
