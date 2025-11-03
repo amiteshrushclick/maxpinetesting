@@ -2,7 +2,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize2, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 // Use dynamic video URL to avoid build issues
-const videoUrl = "/src/assets/virtual-property-tour.mp4";
+const videoUrl = "/virtual-property-tour.mp4";
 
 export default function VideoSection() {
   const videoRef = useRef(null);
@@ -99,12 +99,18 @@ export default function VideoSection() {
           <div className="relative max-w-6xl mx-auto">
             <div className="group relative aspect-video bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
               {/* Video */}
+
+
               <video
                 ref={videoRef}
                 src={videoUrl}
                 className="object-cover w-full h-full"
                 muted={isMuted}
+                autoPlay
+                loop
+                playsInline
               />
+
 
               {/* Overlay when paused */}
               {!isPlaying && (
