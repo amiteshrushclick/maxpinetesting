@@ -2,7 +2,7 @@ import { Play, Pause, Volume2, VolumeX, Maximize2, X } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 // Use dynamic video URL to avoid build issues
-const videoUrl = "/virtual-property-tour.mp4";
+// const videoUrl = "/virtual-property-tour.mp4";
 
 export default function VideoSection() {
   const videoRef = useRef(null);
@@ -102,8 +102,7 @@ export default function VideoSection() {
 
 
               <video
-                ref={videoRef}
-                src={videoUrl}
+                src="/virtual-property-tour.mp4"
                 className="object-cover w-full h-full"
                 muted={isMuted}
                 autoPlay
